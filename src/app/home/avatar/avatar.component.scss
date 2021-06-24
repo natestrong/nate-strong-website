@@ -5,5 +5,17 @@ img {
   border: 2px solid $off-white;
   width: 45px;
   height: 45px;
+}
 
+.description {
+  a{
+    font-size: 28px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  span {
+    display: block;
+  }
 }
