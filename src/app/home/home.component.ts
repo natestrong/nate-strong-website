@@ -6,6 +6,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.scss'],
   template: `
     <app-avatar></app-avatar>
+    <app-reading-list></app-reading-list>
     <div class="headline">
       <h2 class="hi">
         More stuff might go here.

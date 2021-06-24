@@ -9,17 +9,18 @@ import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
         Hello, friends!
         <span>My name is Nathan Strong and I am a software engineer.</span>
         <span *ngIf="descriptionLevel > 0">I work at Sony Pictures Animation and this is my personal blog.</span>
-        <span *ngIf="descriptionLevel > 1">I am a full stack engineer, and I am especially fond of Node, Python, and Angular.</span>
+        <span *ngIf="descriptionLevel > 1">I am a full stack engineer and I am especially fond of Node, Python, and Angular.</span>
         <span *ngIf="descriptionLevel > 2"><br>I am currently fascinated by these topics:
-          <br>&nbsp; • New Browser and JavaScript APIs
-          <br>&nbsp; • Serverless
-          <br>&nbsp; • Node.js
-          <br>&nbsp; • Open Source
-          <br>&nbsp; • Developer Tooling
-          <br>&nbsp; • JavaScript build tools
-          <br>&nbsp; • Compilers
+          <br>&nbsp; •&nbsp; New Browser and JavaScript APIs
+          <br>&nbsp; •&nbsp; Serverless
+          <br>&nbsp; •&nbsp; Node.js
+          <br>&nbsp; •&nbsp; Open Source
+          <br>&nbsp; •&nbsp; Developer Tooling
+          <br>&nbsp; •&nbsp; WebGL
+          <br>&nbsp; •&nbsp; WebAssembly
+          <br>&nbsp; •&nbsp; Algorithms and Data Structures
       </span>
-      <a *ngIf="descriptionLevel < 3" (click)="onClickMore()">...</a>
+        <a (click)="onClickMore()">{{descriptionLevel < 3 ? '...' : '../'}}</a>
       </p>
     </section>
   `,
@@ -36,6 +37,10 @@ export class AvatarComponent implements OnInit {
   }
 
   onClickMore() {
-    this.descriptionLevel++;
+    if (this.descriptionLevel < 3) {
+      this.descriptionLevel++;
+    } else {
+      this.descriptionLevel = 0;
+    }
   }
 }

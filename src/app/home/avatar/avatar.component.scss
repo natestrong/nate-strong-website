@@ -9,7 +9,9 @@ img {
 
 .description {
   a{
-    font-size: 28px;
+    font-size: 22px;
+    font-family: monospace;
+    line-height: 125%;
     &:hover {
       cursor: pointer;
     }

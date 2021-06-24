@@ -5,12 +5,14 @@ import {HomeComponent} from './home.component';
 import {RouterModule} from "@angular/router";
 import { AvatarComponent } from './avatar/avatar.component';
 import {FlexModule} from "@angular/flex-layout";
+import { ReadingListComponent } from './reading-list/reading-list.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    AvatarComponent
+    AvatarComponent,
+    ReadingListComponent
   ],
   imports: [
     CommonModule,

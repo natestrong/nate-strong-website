@@ -1,8 +1,11 @@
 [build]
   command = "ng build --prod && npm run scully"
-  functions = "netlify/functions"
-  publish = "dist/static"
-
+  functions = "./functions"
+  publish = "dist/nate-strong-website/browser"
+[dev]
+  command = "npm run start"
+  functions = "./functions"
+  publish = "src"
 [[redirects]]
   from = "/*"
   to = "/index.html"
