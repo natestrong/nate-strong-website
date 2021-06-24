@@ -1,7 +1,7 @@
 [build]
   command = "ng build --prod && npm run scully"
   functions = "./functions"
-  publish = "dist/nate-strong-website/browser"
+  publish = "dist/nate-strong-website"
 [dev]
   command = "npm run start"
   functions = "./functions"
