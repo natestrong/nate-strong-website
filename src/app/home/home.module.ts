@@ -1,17 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import {HomeComponent} from './home.component';
+import {RouterModule} from "@angular/router";
+import { AvatarComponent } from './avatar/avatar.component';
+import {FlexModule} from "@angular/flex-layout";
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    AvatarComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    RouterModule.forChild([{path: '', component: HomeComponent}]),
+    FlexModule
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+}

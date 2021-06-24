@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {FlexModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -12,9 +14,11 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     NavigationComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    ScullyLibModule
+    BrowserModule,
+    FontAwesomeModule,
+    ScullyLibModule,
+    FlexModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -46,3 +46,4 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
+/backend/node_modules/
