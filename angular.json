@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "scully-template-project": {
+    "nate-strong-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/scully-template-project",
+            "outputPath": "dist/nate-strong-website",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "scully-template-project:build:production"
+              "browserTarget": "nate-strong-website:build:production"
             },
             "development": {
-              "browserTarget": "scully-template-project:build:development"
+              "browserTarget": "nate-strong-website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "scully-template-project:build"
+            "browserTarget": "nate-strong-website:build"
           }
         },
         "test": {
@@ -105,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "scully-template-project"
+  "defaultProject": "nate-strong-website"
 }

@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/scully-template-project'),
+      dir: require('path').join(__dirname, './coverage/nate-strong-website'),
       subdir: '.',
       reporters: [
         { type: 'html' },
