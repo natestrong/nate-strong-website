@@ -9,7 +9,6 @@ import {faGithub, faLinkedin, faTwitter} from "@fortawesome/free-brands-svg-icon
     <header fxLayoutAlign="space-around start">
       <a routerLink="/">natestrong.codes</a>
       <ul class="social" fxLayoutAlign="space-between start">
-        <a><img src=""></a>
         <a href="https://github.com/natestrong"><fa-icon [icon]="faGithub"></fa-icon></a>
         <a href="https://twitter.com/naughtyphoton"><fa-icon [icon]="faTwitter"></fa-icon></a>
         <a href="https://linkedin.com/in/nathan-strong-engineer"><fa-icon [icon]="faLinkedIn"></fa-icon></a>

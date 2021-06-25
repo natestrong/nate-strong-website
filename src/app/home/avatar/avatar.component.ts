@@ -14,8 +14,8 @@ import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
           <br>&nbsp; •&nbsp; New Browser and JavaScript APIs
           <br>&nbsp; •&nbsp; Serverless
           <br>&nbsp; •&nbsp; Node.js
-          <br>&nbsp; •&nbsp; Open Source
           <br>&nbsp; •&nbsp; Developer Tooling
+          <br>&nbsp; •&nbsp; UX Design
           <br>&nbsp; •&nbsp; WebGL
           <br>&nbsp; •&nbsp; WebAssembly
           <br>&nbsp; •&nbsp; Algorithms and Data Structures

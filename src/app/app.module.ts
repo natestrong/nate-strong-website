@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {NavigationComponent} from './navigation/navigation.component';
+import {ScullyLibModule} from '@scullyio/ng-lib';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FlexModule} from "@angular/flex-layout";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,9 +19,11 @@ import {FlexModule} from "@angular/flex-layout";
     BrowserModule,
     FontAwesomeModule,
     ScullyLibModule,
-    FlexModule
+    FlexModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
