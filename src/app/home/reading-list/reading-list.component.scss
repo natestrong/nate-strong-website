@@ -2,7 +2,11 @@
 
 .reading-list-container {
   //background-color: green;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
