@@ -7,11 +7,11 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   template: `
     <app-avatar></app-avatar>
     <app-reading-list></app-reading-list>
-    <div class="headline">
-      <h2 class="hi" style="font-weight: 200">
-        More stuff might go here.
-      </h2>
-    </div>
+<!--    <div class="headline">-->
+<!--      <h2 class="hi" style="font-weight: 200">-->
+<!--        More stuff might go here.-->
+<!--      </h2>-->
+<!--    </div>-->
   `
 })
 export class HomeComponent implements OnInit {

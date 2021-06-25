@@ -8,6 +8,7 @@ import {FlexModule} from "@angular/flex-layout";
 import {ReadingListComponent} from './reading-list/reading-list.component';
 import {BookComponent} from './reading-list/book/book.component';
 import {ScrollTo} from "../directives/scrollTo";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {ScrollTo} from "../directives/scrollTo";
     CommonModule,
     RouterModule.forChild([{path: '', component: HomeComponent}]),
     FlexModule,
+    FontAwesomeModule,
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

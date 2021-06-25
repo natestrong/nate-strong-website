@@ -43,6 +43,7 @@ exports.handler = async () => {
         bookWebsite: result.bookWebsite,
         image: getImageUrl(result.image.asset),
         review: getReviewHtml(result.review),
+        recommended: result.recommended,
         startedDate: new Date(result.startedDate),
         finishedDate: new Date(result.finishedDate),
       };

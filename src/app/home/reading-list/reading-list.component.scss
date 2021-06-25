@@ -8,11 +8,40 @@
 .reading-list-container {
   overflow-x: scroll;
   overflow-y: hidden;
+  position: absolute;
+  width: 100vw;
+  left: 0;
+
   -webkit-overflow-scrolling: touch;
 
   margin-bottom: 40px;
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  .book-list {
+    &.previous {
+      padding-left: 200px;
+    }
+    &.future {
+      padding-right: 200px;
+    }
+  }
+}
+
+.arrow {
+  font-size: 50px;
+  position: absolute;
+  transform: translateY(80px);
+  cursor: pointer;
+  z-index: 1;
+  filter:drop-shadow(0 0 10px black);
+
+  &.left {
+    left: 25px;
+  }
+  &.right {
+    right: 25px;
   }
 }
