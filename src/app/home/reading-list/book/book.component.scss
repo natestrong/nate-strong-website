@@ -6,8 +6,9 @@ $book-width: 150px;
 .book-container {
   border-radius: 15px;
   width: $book-width;
-  height: $book-height;
+  height: 220px;
   position: relative;
+  cursor: pointer;
 
   img {
     width: $book-width;
@@ -17,19 +18,33 @@ $book-width: 150px;
     user-select:none;
   }
 
-  fa-icon {
-    position: absolute;
-    bottom: 6px;
-    left: 6px;
-    font-size: 44px;
-    color: white;
-    animation:spin 40s linear infinite;
-    filter:drop-shadow(0 0 10px hotpink);
+  .star {
+    fa-icon {
+      z-index: 10;
+      position: absolute;
+      bottom: 16px;
+      left: -3px;
+      font-size: 44px;
+      color: white;
+      animation:spin 40s linear infinite;
+      filter:drop-shadow(0 0 10px hotpink);
 
-    &.small {
-      font-size: 32px;
-      bottom: 12px;
-      left: 13px;
+      &.small {
+        font-size: 32px;
+        bottom: 22px;
+        left: 4px;
+      }
+    }
+
+    .love-this-book {
+      display: none;
+      color: $off-white;
+    }
+
+    &:hover {
+      .love-this-book {
+        display: inline;
+      }
     }
   }
 }

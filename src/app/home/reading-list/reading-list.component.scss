@@ -20,27 +20,43 @@
     display: none;
   }
 
+  .description {
+    font-weight: 200;
+  }
+
+  .current {
+  }
+
+  .previous {
+    margin-left: 200px;
+  }
+
+  .future {
+    margin-right: 200px;
+  }
+
   .book-list {
-    &.previous {
-      padding-left: 200px;
-    }
-    &.future {
-      padding-right: 200px;
-    }
+    padding: 20px 20px 10px 20px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, lighten($dark-purple, 10), rgba(0, 0, 0, 0)) 1% 10%;
+    position: relative;
   }
 }
 
 .arrow {
   font-size: 50px;
   position: absolute;
-  transform: translateY(80px);
+  transform: translateY(130px);
   cursor: pointer;
   z-index: 1;
-  filter:drop-shadow(0 0 10px black);
+  filter: drop-shadow(0 0 10px black);
 
   &.left {
     left: 25px;
   }
+
   &.right {
     right: 25px;
   }
