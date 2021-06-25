@@ -1,10 +1,16 @@
 @import "../../../variables";
 
+.reading-list-title {
+  font-size: 26px;
+  font-weight: 200;
+}
+
 .reading-list-container {
-  //background-color: green;
   overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+
+  margin-bottom: 40px;
 
   &::-webkit-scrollbar {
     display: none;

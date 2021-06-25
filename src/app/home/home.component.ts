@@ -8,7 +8,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
     <app-avatar></app-avatar>
     <app-reading-list></app-reading-list>
     <div class="headline">
-      <h2 class="hi">
+      <h2 class="hi" style="font-weight: 200">
         More stuff might go here.
       </h2>
     </div>
