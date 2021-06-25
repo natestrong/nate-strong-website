@@ -1,0 +1,20 @@
+.book-container {
+  border-radius: 15px;
+  //background-color: transparentize(#3c4758, .75);
+  width: 150px;
+  height: 220px;
+
+  img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}

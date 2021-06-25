@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {BookService} from "../../services/book.service";
 import {Observable} from "rxjs";
 import {Book} from "../../models/Book";
@@ -7,7 +7,9 @@ import {tap} from "rxjs/operators";
 @Component({
   selector: 'app-reading-list',
   template: `
-    <app-book *ngFor="let book of books$ | async" [book]="book"></app-book>
+    <section fxLayout="row" fxLayoutGap="32px" class="reading-list-container">
+      <app-book *ngFor="let book of books$ | async" [book]="book"></app-book>
+    </section>
   `,
   styleUrls: ['./reading-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

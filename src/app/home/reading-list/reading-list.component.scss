@@ -1,0 +1,8 @@
+@import "../../../variables";
+
+.reading-list-container {
+  //background-color: green;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
