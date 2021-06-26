@@ -8,5 +8,4 @@ export interface Book {
   finishedDate: Date,
   recommended: boolean,
   review: string,
-  opacity?: number
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy, Input, ViewChild} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, AfterViewInit} from '@angular/core';
 import {Book} from "../../../models/Book";
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 
@@ -6,7 +6,7 @@ import {faStar} from '@fortawesome/free-solid-svg-icons';
   selector: 'app-book',
   template: `
     <div class="book-container">
-      <img [src]="book.image" alt="book cover">
+      <img [src]="book.image" alt="book cover" draggable="false">
 
       <div *ngIf="book.recommended" class="star">
         <fa-icon [icon]="star"></fa-icon>
@@ -19,13 +19,9 @@ import {faStar} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./book.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BookComponent implements OnInit {
+export class BookComponent {
   @Input() book: Book;
+  @ViewChild('bookContainer') bookContainer;
   star = faStar;
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
+  opacity: number = .1;
 }

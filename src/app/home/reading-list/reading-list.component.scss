@@ -51,7 +51,12 @@
   transform: translateY(130px);
   cursor: pointer;
   z-index: 1;
-  filter: drop-shadow(0 0 10px black);
+  filter: drop-shadow(0 0 5px $dark-purple)
+  drop-shadow(0 0 10px $dark-purple)
+  drop-shadow(0 0 20px $dark-purple)
+  drop-shadow(0 0 30px $dark-purple)
+  drop-shadow(0 0 40px $dark-purple)
+  drop-shadow(0 0 80px $dark-purple);
 
   &.left {
     left: 25px;
