@@ -37,7 +37,7 @@ import SweetScroll from 'sweet-scroll';
           </div>
         </div>
 
-        <div class="future">
+        <div class="future" fxLayout="column" fxLayoutAlign="start start">
           <span class="description">what's next&rarr;</span>
           <div fxLayout fxLayoutGap="32px" class="book-list">
             <app-book *ngFor="let book of (bookService.books$ | async).future"

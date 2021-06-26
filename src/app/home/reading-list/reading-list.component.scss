@@ -11,10 +11,13 @@
   position: absolute;
   width: 100vw;
   left: 0;
+  margin-bottom: 40px;
+
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
 
   -webkit-overflow-scrolling: touch;
 
-  margin-bottom: 40px;
 
   &::-webkit-scrollbar {
     display: none;
@@ -28,11 +31,13 @@
   }
 
   .previous {
+    padding-left: 200px;
     margin-left: 200px;
   }
 
   .future {
     margin-right: 200px;
+    padding-right: 200px;
   }
 
   .book-list {
@@ -53,9 +58,7 @@
   z-index: 1;
   filter: drop-shadow(0 0 5px $dark-purple)
   drop-shadow(0 0 10px $dark-purple)
-  drop-shadow(0 0 20px $dark-purple)
   drop-shadow(0 0 30px $dark-purple)
-  drop-shadow(0 0 40px $dark-purple)
   drop-shadow(0 0 80px $dark-purple);
 
   &.left {
