@@ -18,6 +18,15 @@ $book-width: 150px;
     user-select: none;
   }
 
+  .img-loading {
+    width: $book-width;
+    height: $book-height;
+    border-radius: 10px;
+    background-color: lighten($dark-purple, 10);
+    position: absolute;
+    top: 0;
+  }
+
   .star {
     fa-icon {
       z-index: 10;
@@ -58,10 +67,10 @@ $book-width: 150px;
 
 progress {
   position: absolute;
-  bottom: 10px;
+  bottom: 14px;
   left: 0;
   width: 100%;
-  height: 18px;
+  height: 14px;
 }
 
 progress[value]::-webkit-progress-bar {
@@ -76,11 +85,10 @@ progress[value] {
 }
 
 progress[value]::-webkit-progress-value {
-  background-image:
-    -webkit-linear-gradient(-45deg,
-      transparent 33%, rgba(0, 0, 0, .1) 33%,
-      rgba(0,0, 0, .1) 66%, transparent 66%),
-    -webkit-linear-gradient(left, darken($dark-purple, 5), lighten($pink, 5));
+  background-image: -webkit-linear-gradient(-45deg,
+    transparent 33%, rgba(0, 0, 0, .1) 33%,
+    rgba(0, 0, 0, .1) 66%, transparent 66%),
+  -webkit-linear-gradient(left, darken($dark-purple, 5), lighten($pink, 5));
 
   border-radius: 0 0 10px 10px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
