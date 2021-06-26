@@ -46,6 +46,7 @@ export class BookService {
           if (book.finishedDate && book.finishedDate < this.date) {
             result.previous.push(book);
           } else if (book.startedDate && this.date < book.finishedDate) {
+            book.finishedDate.setDate(book.finishedDate.getDate() + 1);
             result.current.push(book);
             book.progress = this.getProgressFromDate(book.startedDate, book.finishedDate);
           } else {
