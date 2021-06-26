@@ -7,7 +7,7 @@ import {faStar} from '@fortawesome/free-solid-svg-icons';
   template: `
     <div class="book-container">
       <div *ngIf="!imgLoaded" class="img-loading"></div>
-      <img [src]="book.image" (load)="onLoad()" loading="lazy" [alt]="book.title" draggable="false">
+      <img *ngIf="book.image" [src]="book.image + '?h=200'" loading="lazy" (load)="onLoad()" [alt]="book.title" draggable="false">
 
       <div *ngIf="book.recommended" class="star">
         <fa-icon [icon]="star"></fa-icon>
@@ -27,7 +27,6 @@ import {faStar} from '@fortawesome/free-solid-svg-icons';
 })
 export class BookComponent {
   @Input() book: Book;
-  @ViewChild('bookContainer') bookContainer;
   star = faStar;
   imgLoaded: boolean = false;
 

@@ -11,14 +11,16 @@ type SortedBooks = { previous: Book[], current: Book[], future: Book[] }
 })
 export class BookService {
   date: Date = new Date();
-  private _bookSorted$: BehaviorSubject<SortedBooks> = new BehaviorSubject<SortedBooks>({
-    previous: [],
-    current: [],
-    future: []
-  });
+  private _bookSorted$: BehaviorSubject<SortedBooks>;
   subscription: Subscription;
 
   constructor(private http: HttpClient) {
+    const book = {};
+    this._bookSorted$ = new BehaviorSubject<any>({
+      previous: [book, book],
+      current: [book, book],
+      future: [book, book]
+    });
   }
 
   getProgressFromDate(startDate, endDate): number {
