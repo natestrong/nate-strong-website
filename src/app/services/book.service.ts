@@ -21,6 +21,12 @@ export class BookService {
   constructor(private http: HttpClient) {
   }
 
+  getProgressFromDate(startDate, endDate): number {
+    const totalTime = +endDate - +startDate;
+    const timeElapsed = +this.date - +startDate
+    return (timeElapsed / totalTime) * 100
+  }
+
   fetchBooks(): Observable<SortedBooks> {
     return this.http.get<Book[]>('/.netlify/functions/getBooks', {
       headers: {
@@ -41,6 +47,7 @@ export class BookService {
             result.previous.push(book);
           } else if (book.startedDate && this.date < book.finishedDate) {
             result.current.push(book);
+            book.progress = this.getProgressFromDate(book.startedDate, book.finishedDate);
           } else {
             result.future.push(book);
           }

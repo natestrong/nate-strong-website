@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, AfterViewInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, ViewChild} from '@angular/core';
 import {Book} from "../../../models/Book";
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 
@@ -13,6 +13,11 @@ import {faStar} from '@fortawesome/free-solid-svg-icons';
         <fa-icon class='small' [icon]="star"></fa-icon>
         <span class="love-this-book">I love this book</span>
       </div>
+
+      <progress *ngIf='book.progress'
+                [value]="book.progress"
+                max="100">
+      </progress>
     </div>
 
   `,
@@ -23,5 +28,4 @@ export class BookComponent {
   @Input() book: Book;
   @ViewChild('bookContainer') bookContainer;
   star = faStar;
-  opacity: number = .1;
 }

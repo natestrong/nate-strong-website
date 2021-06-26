@@ -15,7 +15,7 @@ $book-width: 150px;
     height: $book-height;
     object-fit: cover;
     border-radius: 10px;
-    user-select:none;
+    user-select: none;
   }
 
   .star {
@@ -26,8 +26,8 @@ $book-width: 150px;
       left: -3px;
       font-size: 44px;
       color: white;
-      animation:spin 40s linear infinite;
-      filter:drop-shadow(0 0 10px hotpink);
+      animation: spin 40s linear infinite;
+      filter: drop-shadow(0 0 10px hotpink);
 
       &.small {
         font-size: 32px;
@@ -49,4 +49,44 @@ $book-width: 150px;
   }
 }
 
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(-360deg); } }
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+progress {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  //background-color: $dark-purple;
+  /* border-radius: 10px; */
+  height: 18px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: darken($dark-purple, 7);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image:
+    -webkit-linear-gradient(-45deg,
+      transparent 33%, rgba(0, 0, 0, .1) 33%,
+      rgba(0,0, 0, .1) 66%, transparent 66%),
+    -webkit-linear-gradient(left, darken($dark-purple, 5), lighten($pink, 5));
+
+  border-radius: 0 0 10px 10px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+
+  -webkit-animation: animate-stripes 5s linear infinite;
+  animation: animate-stripes 5s linear infinite;
+}
