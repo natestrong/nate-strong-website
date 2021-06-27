@@ -30,7 +30,7 @@ import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
 
         <a (click)="showMoreInfo = !showMoreInfo;" class="more-info-button">
           <fa-icon [icon]="showMoreInfo ? upArrow: downArrow"></fa-icon>
-          {{showMoreInfo ? 'less info' : 'more info'}}
+          {{showMoreInfo ? 'less about me' : 'more about me'}}
           <fa-icon [icon]="showMoreInfo ? upArrow: downArrow"></fa-icon>
         </a>
       </span>
