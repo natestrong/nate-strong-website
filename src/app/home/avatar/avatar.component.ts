@@ -1,46 +1,47 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
+import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: 'app-avatar',
   template: `
-    <section fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="start center">
-      <img src="assets/me.jpeg" alt="a picture of me">
-      <p class="description">
-        Hello, friends!
-        <span>My name is Nathan Strong and I am a software engineer.</span>
-        <span *ngIf="descriptionLevel > 0">I work at Sony Pictures Animation and this is my personal blog.</span>
-        <span *ngIf="descriptionLevel > 1">I am a full stack engineer and I am especially fond of Node, Python, and Angular.</span>
-        <span *ngIf="descriptionLevel > 2"><br>I am currently fascinated by these topics:
-          <br>&nbsp; •&nbsp; New Browser and JavaScript APIs
-          <br>&nbsp; •&nbsp; Serverless
-          <br>&nbsp; •&nbsp; Node.js
-          <br>&nbsp; •&nbsp; Developer Tooling
-          <br>&nbsp; •&nbsp; UX Design
-          <br>&nbsp; •&nbsp; WebGL
-          <br>&nbsp; •&nbsp; WebAssembly
-          <br>&nbsp; •&nbsp; Algorithms and Data Structures
+    <section>
+      <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="start start">
+        <img src="assets/me.jpeg" alt="a picture of me">
+        <span>
+        <span>Hello, friends!</span>
+        <span><br>My name is Nathan Strong and I am a software engineer.</span>
+
+        <div *ngIf="showMoreInfo">
+          <p>I work at Sony Pictures Animation and this is my personal blog.</p>
+          <p>I am a full stack engineer and I am especially fond of Node, Python, and Angular.</p>
+          <p>I am currently fascinated by these topics:</p>
+          <ul>
+            <li>New Browser and JavaScript APIs</li>
+            <li>Serverless</li>
+            <li>Node.js</li>
+            <li>Developer Tooling</li>
+            <li>UX Design</li>
+            <li>WebGL</li>
+            <li>WebAssembly</li>
+            <li>Algorithms and Data Structures</li>
+          </ul>
+        </div>
+
+        <a (click)="showMoreInfo = !showMoreInfo;" class="more-info-button">
+          <fa-icon [icon]="showMoreInfo ? upArrow: downArrow"></fa-icon>
+          {{showMoreInfo ? 'less info' : 'more info'}}
+          <fa-icon [icon]="showMoreInfo ? upArrow: downArrow"></fa-icon>
+        </a>
       </span>
-        <a (click)="onClickMore()">{{descriptionLevel < 3 ? '...' : '../'}}</a>
-      </p>
+      </div>
     </section>
   `,
   styleUrls: ['./avatar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AvatarComponent implements OnInit {
-  descriptionLevel = 0;
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
-  onClickMore() {
-    if (this.descriptionLevel < 3) {
-      this.descriptionLevel++;
-    } else {
-      this.descriptionLevel = 0;
-    }
-  }
+export class AvatarComponent {
+  showMoreInfo: boolean = false;
+  downArrow: IconDefinition = faChevronDown;
+  upArrow: IconDefinition = faChevronUp;
 }

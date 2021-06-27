@@ -8,16 +8,15 @@ img {
 }
 
 .description {
-  a{
-    font-size: 22px;
-    font-family: monospace;
-    line-height: 125%;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
   span {
     display: block;
   }
+}
+
+.more-info-button {
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 120px;
+  margin-top: 14px;
 }

@@ -1,7 +1,20 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import {BookService} from "../../services/book.service";
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import SweetScroll from 'sweet-scroll';
+import {from, fromEvent, Subscription} from "rxjs";
+import {
+  debounceTime,
+  map,
+  mergeMap,
+  pairwise,
+  pluck,
+  reduce,
+  startWith,
+  takeUntil,
+  tap,
+  throttleTime
+} from "rxjs/operators";
 
 
 @Component({
@@ -13,8 +26,7 @@ import SweetScroll from 'sweet-scroll';
       class="arrow left"
       [icon]="leftArrow"
       (click)="onLeftArrow()"
-      [ngStyle.lt-sm]="{'left': '0px'}"
-      [hidden]="!showLeftArrow">
+      [ngStyle.lt-sm]="{'left': '0px'}">
     </fa-icon>
 
     <div>
@@ -52,22 +64,21 @@ import SweetScroll from 'sweet-scroll';
     <fa-icon class="arrow right"
              [ngStyle.lt-sm]="{'right': '0px'}"
              [icon]="rightArrow"
-             (click)="onRightArrow()"
-             *ngIf="showRightArrow">
+             (click)="onRightArrow()">
     </fa-icon>
   `,
   styleUrls: ['./reading-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReadingListComponent implements AfterViewInit {
+export class ReadingListComponent implements AfterViewInit, OnDestroy {
   leftArrow = faChevronLeft;
   rightArrow = faChevronRight;
 
   @ViewChild('listContainer', {static: false}) listContainer: ElementRef<HTMLElement>;
 
   scroller: SweetScroll;
-  showRightArrow: boolean = true;
-  showLeftArrow: boolean = true;
+
+  private mouseDownSubscription: Subscription;
 
   constructor(public bookService: BookService) {
   }
@@ -81,19 +92,33 @@ export class ReadingListComponent implements AfterViewInit {
       },
       el
     );
+
+    const down$ = fromEvent(this.listContainer.nativeElement, 'mousedown');
+    const up$ = fromEvent(document, 'mouseup');
+    const move$ = fromEvent(document, 'mousemove')
+      .pipe(
+        takeUntil(up$),
+        pluck('clientX'),
+        pairwise(),
+        map(([p, c]) => (p as number) - (c as number))
+
+      );
+    this.mouseDownSubscription = down$
+      .pipe(
+        mergeMap(() => move$)
+      )
+      .subscribe(move => this.listContainer.nativeElement.scrollLeft += move);
+  }
+
+  ngOnDestroy() {
+    this.mouseDownSubscription.unsubscribe();
   }
 
   onLeftArrow() {
     this.scroller.to('-=300');
-    this.showRightArrow = true;
-    const el = this.listContainer.nativeElement;
-    this.showLeftArrow = el.scrollLeft > 400;
   }
 
   onRightArrow() {
     this.scroller.to('+=300');
-    this.showLeftArrow = true;
-    const el = this.listContainer.nativeElement;
-    this.showRightArrow = (el.clientWidth < el.scrollWidth - el.scrollLeft - 400);
   }
 }
