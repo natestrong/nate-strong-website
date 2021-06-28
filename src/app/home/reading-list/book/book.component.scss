@@ -8,6 +8,7 @@ $book-width: 150px;
   width: $book-width;
   height: 220px;
   position: relative;
+  user-select: none;
 
   img {
     width: $book-width;
@@ -24,6 +25,7 @@ $book-width: 150px;
     background-color: lighten($dark-purple, 10);
     position: absolute;
     top: 0;
+    user-select: none;
   }
 
   .star {
@@ -36,6 +38,7 @@ $book-width: 150px;
       color: white;
       animation: spin 40s linear infinite;
       filter: drop-shadow(0 0 10px hotpink);
+      user-select: none;
 
       &.small {
         font-size: 32px;

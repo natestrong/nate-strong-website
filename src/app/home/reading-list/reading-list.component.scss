@@ -60,6 +60,10 @@
   drop-shadow(0 0 30px $dark-purple)
   drop-shadow(0 0 80px $dark-purple);
 
+  &:active {
+    outline: #2d8f51 2px;
+  }
+
   &.left {
     left: 25px;
   }

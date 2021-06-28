@@ -2,19 +2,8 @@ import {AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy
 import {BookService} from "../../services/book.service";
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import SweetScroll from 'sweet-scroll';
-import {from, fromEvent, Subscription} from "rxjs";
-import {
-  debounceTime,
-  map,
-  mergeMap,
-  pairwise,
-  pluck,
-  reduce,
-  startWith,
-  takeUntil,
-  tap,
-  throttleTime
-} from "rxjs/operators";
+import {fromEvent, Subscription} from "rxjs";
+import {map, mergeMap, pairwise, pluck, takeUntil, tap} from "rxjs/operators";
 
 
 @Component({
@@ -23,9 +12,11 @@ import {
     <h1 class="reading-list-title">My bookshelf</h1>
 
     <fa-icon
+      tabindex="0"
       class="arrow left"
       [icon]="leftArrow"
       (click)="onLeftArrow()"
+      (keyup.enter)="onLeftArrow()"
       [ngStyle.lt-sm]="{'left': '0px'}">
     </fa-icon>
 
@@ -64,7 +55,9 @@ import {
     <fa-icon class="arrow right"
              [ngStyle.lt-sm]="{'right': '0px'}"
              [icon]="rightArrow"
-             (click)="onRightArrow()">
+             (click)="onRightArrow()"
+             tabindex="0"
+             (keyup.enter)="onRightArrow()">
     </fa-icon>
   `,
   styleUrls: ['./reading-list.component.scss'],
@@ -101,10 +94,10 @@ export class ReadingListComponent implements AfterViewInit, OnDestroy {
         pluck('clientX'),
         pairwise(),
         map(([p, c]) => (p as number) - (c as number))
-
       );
     this.mouseDownSubscription = down$
       .pipe(
+        tap(event => event.preventDefault()),
         mergeMap(() => move$)
       )
       .subscribe(move => this.listContainer.nativeElement.scrollLeft += move);
