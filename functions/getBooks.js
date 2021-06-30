@@ -40,7 +40,7 @@ exports.handler = async () => {
         title: result.title,
         subtitle: result.subtitle,
         author: result.author,
-        bookWebsite: result.bookWebsite,
+        website: result.website,
         image: getImageUrl(result.image.asset),
         review: getReviewHtml(result.review),
         recommended: result.recommended,

@@ -9,6 +9,7 @@ import {ReadingListComponent} from './reading-list/reading-list.component';
 import {BookComponent} from './reading-list/book/book.component';
 import {ScrollTo} from "../directives/scrollTo";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { BookDetailsComponent } from './reading-list/book-details/book-details.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     HomeComponent,
     ReadingListComponent,
     ScrollTo,
+    BookDetailsComponent,
   ],
   imports: [
     CommonModule,
