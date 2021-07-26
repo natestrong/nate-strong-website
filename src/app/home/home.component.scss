@@ -2,6 +2,15 @@
 
 .headline {
   margin-top: 120px;
+
+  h3 {
+    font-weight: 200;
+
+    a {
+      color: lighten($pink, 10);
+      font-weight: bold;
+    }
+  }
 }
 
 app-avatar {

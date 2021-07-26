@@ -11,7 +11,7 @@ import {faExternalLinkSquareAlt} from '@fortawesome/free-solid-svg-icons';
     <h2>{{book.subtitle}}</h2>
     <div *ngIf="book.review">
       <p>My thoughts:</p>
-      <p [innerHTML]="book.review"></p>
+      <p [innerHTML]="book.review" class="review-html"></p>
     </div>
   `,
   styleUrls: ['./book-details.component.scss'],
