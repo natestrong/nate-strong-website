@@ -156,7 +156,7 @@ export class ReadingListComponent implements AfterViewInit, OnDestroy {
                 inline:'center',
                 behavior: 'smooth'
             });
-        }, 400);
+        }, 600);
     }
 
     ngOnChanges(simpleChanges) {
