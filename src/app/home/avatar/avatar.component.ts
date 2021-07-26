@@ -41,7 +41,7 @@ import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AvatarComponent {
-  showMoreInfo: boolean = false;
+  showMoreInfo: boolean = true;
   downArrow: IconDefinition = faChevronDown;
   upArrow: IconDefinition = faChevronUp;
 }
