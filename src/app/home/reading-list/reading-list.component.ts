@@ -154,8 +154,9 @@ export class ReadingListComponent implements AfterViewInit, OnDestroy {
             document.getElementById('current-books').scrollIntoView({
                 block:'nearest',
                 inline:'center',
+                behavior: 'smooth'
             });
-        }, 300);
+        }, 400);
     }
 
     ngOnChanges(simpleChanges) {
