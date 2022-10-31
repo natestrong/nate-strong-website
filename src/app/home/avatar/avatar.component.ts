@@ -10,21 +10,20 @@ import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
         <img src="assets/me.jpeg" alt="a picture of me">
         <span>
         <span>Hello, friends!</span>
-        <span><br>My name is Nathan Strong and I am a software engineer.</span>
+        <span><br>My name is Nathan Strong and I am a software engineer and VFX artist.</span>
 
         <div *ngIf="showMoreInfo">
-          <p>I work at Sony Pictures Animation and this is my personal blog.</p>
-          <p>I am a full stack engineer and I am especially fond of Node, Python, and Angular.</p>
+          <p>I work at IBM and this is my personal blog.</p>
+          <p>I am a full stack engineer and I am especially fond of Node, Python, React, and Angular.</p>
           <p>I am currently fascinated by these topics:</p>
           <ul>
+            <li>WebGL and 3D Graphics on the web</li>
             <li>New Browser and JavaScript APIs</li>
-            <li>Serverless</li>
+            <li>3D Animation Tools</li>
             <li>Node.js</li>
             <li>Developer Tooling</li>
             <li>UX Design</li>
-            <li>WebGL</li>
             <li>WebAssembly</li>
-            <li>Algorithms and Data Structures</li>
           </ul>
         </div>
 
