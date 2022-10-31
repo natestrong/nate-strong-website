@@ -22,6 +22,7 @@ import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
             <li>3D Animation Tools</li>
             <li>Node.js</li>
             <li>Developer Tooling</li>
+            <li>Productivity Scripting w/ Obisidian and Todoist</li>
             <li>UX Design</li>
             <li>WebAssembly</li>
           </ul>
