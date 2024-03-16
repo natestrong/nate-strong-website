@@ -9,7 +9,7 @@ import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
       <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="start start">
         <img src="assets/me.jpeg" alt="a picture of me">
         <span>
-          <span>Hi friends!</span>
+          <span>Hello, friends!</span>
           <span><br>I'm Nathan Strong, the Series Pipeline Supervisor at Sony Pictures Animation.</span>
 
           <div *ngIf="showMoreInfo">
