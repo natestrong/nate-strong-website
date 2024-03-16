@@ -9,31 +9,30 @@ import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
       <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="start start">
         <img src="assets/me.jpeg" alt="a picture of me">
         <span>
-        <span>Hello, friends!</span>
-        <span><br>My name is Nathan Strong and I am a software engineer and VFX artist.</span>
+          <span>Hello there!</span>
+          <span><br>I'm Nathan Strong, the Series Pipeline Supervisor at Sony Pictures Animation.</span>
 
-        <div *ngIf="showMoreInfo">
-          <p>I work at IBM and this is my personal blog.</p>
-          <p>I am a full stack engineer and I am especially fond of Node, Python, React, and Angular.</p>
-          <p>I am currently fascinated by these topics:</p>
-          <ul>
-            <li>WebGL and 3D Graphics on the web</li>
-            <li>New Browser and JavaScript APIs</li>
-            <li>3D Animation Tools</li>
-            <li>Node.js</li>
-            <li>Developer Tooling</li>
-            <li>Productivity Scripting w/ Obisidian and Todoist</li>
-            <li>UX Design</li>
-            <li>WebAssembly</li>
-          </ul>
-        </div>
+          <div *ngIf="showMoreInfo">
+            <p>Formerly a Software Engineer at IBM and a Creative Specialist at Foundry, I blend software engineering with visual effects artistry. This is my personal blog where I share my explorations and insights.</p>
+            <p>Here's what's currently capturing my imagination:</p>
+            <ul>
+              <li>Universal Scene Description (USD)</li>
+              <li>Apple Vision Framework and Pro Apps</li>
+              <li>NVIDIA Omniverse</li>
+              <li>WebGL and 3D Graphics on the Web</li>
+              <li>New Browser and JavaScript APIs</li>
+              <li>3D Animation Tools</li>
+              <li>UX Design</li>
+            </ul>
+            <p>Check out my side project <a href="https://StoryTwin.com" target="_blank">StoryTwin.com</a>, where I'm blending narrative scripts with 3D environments using generative AI.</p>
+          </div>
 
-        <a (click)="showMoreInfo = !showMoreInfo;" class="more-info-button">
-          <fa-icon [icon]="showMoreInfo ? upArrow: downArrow"></fa-icon>
-          {{showMoreInfo ? 'less about me' : 'more about me'}}
-          <fa-icon [icon]="showMoreInfo ? upArrow: downArrow"></fa-icon>
-        </a>
-      </span>
+          <a (click)="showMoreInfo = !showMoreInfo;" class="more-info-button">
+            <fa-icon [icon]="showMoreInfo ? upArrow : downArrow"></fa-icon>
+            {{ showMoreInfo ? 'less about me' : 'more about me' }}
+            <fa-icon [icon]="showMoreInfo ? upArrow : downArrow"></fa-icon>
+          </a>
+        </span>
       </div>
     </section>
   `,
