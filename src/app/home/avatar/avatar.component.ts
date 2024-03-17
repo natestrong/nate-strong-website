@@ -24,7 +24,7 @@ import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
               <li>3D Animation Tools</li>
               <li>UX Design</li>
             </ul>
-            <p>Check out my side project <a href="https://StoryTwin.com" target="_blank">StoryTwin.com</a>, where I'm blending narrative scripts with 3D environments using generative AI.</p>
+            <p>Check out my side project <a href="https://app.StoryTwin.com" target="_blank">StoryTwin.com</a>, where I'm blending narrative scripts with 3D environments using generative AI.</p>
           </div>
 
           <a (click)="showMoreInfo = !showMoreInfo;" class="more-info-button">
